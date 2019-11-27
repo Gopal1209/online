@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>sign up</title>
+  </head>
+  <body>
+  <form action="{% url 'save' %}" method="post">
+      {% csrf_token %}
+    <table align="center" bgcolor="blue" style="color: white" border="2">
+        <tr>
+            <th width="200" height="40">
+                USER NAME :
+            </th>
+            <th width="200" height="40">
+                <input type="text" name="uname" required>
+            </th>
+        </tr>
+        <tr>
+            <th width="200" height="40">
+                EMAIL :
+            </th>
+            <th width="200" height="40">
+                <input type="email" name="email" required>
+            </th>
+        </tr>
+        <tr>
+            <th width="200" height="40">
+                CONTACT :
+            </th>
+            <th width="200" height="40">
+                <input type="tel" name="cont" required minlength="10" maxlength="10">
+            </th>
+        </tr>
+        <tr>
+            <th width="200" height="40">
+                PASSWORD :
+            </th>
+            <th width="200" height="40">
+                <input type="password" name="upass" required minlength="6" maxlength="10">
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2" align="center" width="200" height="40">
+                <button type="submit">SIGN UP</button>
+            </th>
+        </tr>
+    </table>
+      </form>
+  </body>
+</html>
