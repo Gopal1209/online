@@ -9,15 +9,62 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>ygr online shopping</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
   </head>
-  <body>
+  <body background="{% static 'images/e-commerce-representational.jpg' %}">
 
 
-<h1 style="text-align: center;color: red; font-size: 60px;background-color: rebeccapurple">YGR ONLINE SALES</h1>
+<h1 style="text-align: center;color: red; font-size: 60px;background-color: rebeccapurple"> YGR ONLINE SALES</h1>
 
-       <h5 align="right">{{ data }} <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-           </h5>
+
+<h5 align="right">
+    <div class="dropdown">
+        <button class="dropbtn">{{ data }}</button>
+        <div class="dropdown-content">
+        <a href="#" style="background-color: red;color: white"><img src="{% static 'images/shopping-cart.png' %}" width="50" height="50"></a>
+        <a  style="background-color: green;color: white" class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </div>
+
+    </div>
+</h5>
 <table align="center" cellspacing="20" cellpadding="50" style="text-align: center">
     <tr>
         <th>

@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.showIndex,name="main"),
     path('logincheck/',views.logincheck,name="logincheck"),
+    path('forgot/', views.Forgot, name="forgot"),
+    path('getdata/', views.Getdata, name="getdata"),
     path('register/', views.Register, name="register"),
     path('save/', views.Signup, name="save"),
     path('logout/',views.logout,name="logout")

@@ -1,0 +1,35 @@
+<h1 style="text-align: center;color: red; font-size: 60px;background-color: rebeccapurple"> YGR ONLINE SALES</h1>
+<form action="{% url 'getdata' %}" method="get">
+<table align="center">
+    <tr>
+        <th>EMAIL :</th>
+        <th><input type="email" name="email" required></th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button type="submit">GET</button>
+        </th>
+    </tr>
+</table>
+    </form>
+
+{% if dataa %}
+    <form action="{% url 'update' %}" method="post">
+    {% csrf_token %}
+    <table align="center">
+    <tr>
+        <th>EMAIL :</th>
+        <th><input type="email" value="{{ dataa }}" readonly></th>
+    </tr>
+    <tr>
+        <th>NEW PASSWORD :</th>
+        <th><input type="password" name="upass"></th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button type="submit">UPDATE</button>
+        </th>
+    </tr>
+    </table>
+    </form>
+{% endif %}

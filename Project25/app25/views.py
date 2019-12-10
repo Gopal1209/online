@@ -30,8 +30,11 @@ def logincheck(request):
 
 def logout(request):
     # deleting uname from session
-    del request.session["user"]
-    return render(request,"index.html")
+    try:
+        del request.session["user"]
+        return render(request,"index.html")
+    except KeyError:
+        return redirect("main")
 
 
 def Register(request):
@@ -45,3 +48,13 @@ def Signup(request):
     password = request.POST["upass"]
     LoginDetails(username=username, email=email, contact=cont, password=password).save()
     return redirect('main')
+
+
+def Forgot(request):
+    return render(request, "forgot.html")
+
+
+def Getdata(request):
+    email = request.GET["email"]
+    data = LoginDetails.objects.get(email=email)
+    return render(request, "forgot.html", {"dataa":data})
